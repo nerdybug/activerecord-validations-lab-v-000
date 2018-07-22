@@ -4,8 +4,8 @@ class Post < ActiveRecord::Base
   validates :summary, length: { maximum: 250 }
   validates :category, inclusion: { in: %w(Fiction Non-Fiction)}
 
-  def validate(record)
-    unless !record.title.include? ("Won't Believe" || "Secret" || "Top [number]" || "Guess" )
+  def validate(post)
+    unless !post.title.include? ("Won't Believe" || "Secret" || "Top [number]" || "Guess" )
     end
   end
 end
