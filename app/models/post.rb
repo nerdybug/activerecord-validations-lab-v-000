@@ -1,3 +1,10 @@
+
+class ClickbaitCheck < ActiveRecord::Validator
+  def validate(record)
+    unless record.title.include? ("Won't Believe" || "Secret" || "Top [number]" || "Guess" )
+    end
+  end
+end
 class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :content, length: { minimum: 250 }
@@ -6,9 +13,3 @@ class Post < ActiveRecord::Base
   validates_with ClickbaitCheck
 end
 
-class ClickbaitCheck < ActiveRecord::Validator
-  def validate(record)
-    unless record.title.include? ("Won't Believe" || "Secret" || "Top [number]" || "Guess" )
-    end
-  end
-end
