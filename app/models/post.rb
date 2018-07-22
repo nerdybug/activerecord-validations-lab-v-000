@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: { in: %w(Fiction Non-Fiction)}
 
   def validate(record)
-    unless record.title.include? ("Won't Believe" || "Secret" || "Top [number]" || "Guess" )
+    unless !record.title.include? ("Won't Believe" || "Secret" || "Top [number]" || "Guess" )
     end
   end
 end
