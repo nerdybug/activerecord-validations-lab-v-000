@@ -6,5 +6,6 @@ class Post < ActiveRecord::Base
 
   def validate(record)
     unless record.title.include? ("Won't Believe" || "Secret" || "Top [number]" || "Guess" )
+    end
   end
 end
